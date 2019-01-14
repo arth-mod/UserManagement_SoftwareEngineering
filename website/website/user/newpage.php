@@ -1,0 +1,105 @@
+<?php
+session_start();
+include ('../includes/db.php');
+
+     if(isset($_POST['submit'])){
+     
+        $username = $_POST['user'];
+	$newusername = $_POST['newuser'];
+        $newpassword = md5($_POST['pass']);
+	$query = $db->query("UPDATE users SET password='$newpassword',username='$newusername' where username='$username'");	  
+	}
+
+$dataPoints = array(
+	array("label"=> "Mark", "y"=> 1180),
+	array("label"=> "Bill", "y"=> 1158),
+	array("label"=> "Joe", "y"=> 1100),
+	array("label"=> "Paige", "y"=> 800),
+	array("label"=> "Maggie", "y"=> 500),
+	array("label"=> "Allie", "y"=> 150),
+	array("label"=> "Toby", "y"=> 100),
+	array("label"=> "David", "y"=> 90),
+	array("label"=> "Frank", "y"=> 80),
+	array("label"=> "Ann", "y"=> 70));
+	
+?>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+ <link href="../css/newpage.css" rel="stylesheet" type="text/css"/>
+<script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title: {
+		text: "Best 10 Players"
+	},
+	axisY: {
+		title: "Games won",
+		includeZero: false
+	},
+	data: [{
+		type: "column",
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart.render();
+ 
+}
+</script>
+ <link rel="stylesheet" href="../css/statistiche.css">
+  <script>
+    function goBack(){
+    window.open("index_users.php");}
+  </script>
+</head>
+<body>
+<button type="submit" onclick="goBack()">Go to the homepage</button>
+<h1>Welcome to your profile page </h1>     
+    <hr>
+    <br>
+<br>
+<br>
+<form id="change_pass" action="newpage.php" method="post">
+      <input type="text" placeholder="Your username" required="required" pattern="\w*"  name="user"/>
+      <input type="text" placeholder="New username" required="required" pattern="\w{1,10}"  name="newuser"
+      oninvalid="this.setCustomValidity('No more than 10 characters for the username')" oninput="setCustomValidity('')"/>
+      <input type="password" placeholder="New password" required="required" pattern="\w{5,}" name="pass" 
+       oninvalid="this.setCustomValidity('At least 5 characters for the password')" oninput="setCustomValidity('')"/>
+      <input type="submit" name="submit" value="Change password and username"><br/>
+      </form>
+      <br>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <br>
+      <br>
+      <h1>Statistics </h1>
+<form>
+      
+    <table style="width:100%">
+    <caption><p>My score</p></caption>
+  <tr>
+    <th>Score</th>
+    <th>Won games</th> 
+    <th>Lost games</th>
+  </tr>
+  <tr>
+    <td>Didi</td>
+    <td>5</td>
+    <td>50</td>
+  </tr>
+</table>
+   <br><br>
+   </form>
+   <br>
+   <br>
+   <br>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</body>
+</html>

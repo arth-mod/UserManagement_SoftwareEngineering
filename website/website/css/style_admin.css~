@@ -1,0 +1,223 @@
+div, article, section, header, footer, nav, li {
+position : relative;
+}
+
+body{
+    color: #023650;
+    background: #eee;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+form{
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+    height: 200px;
+    width: 320px;
+    overflow: hidden;
+}
+
+#mainContent {
+    clear: both;
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+
+
+/*________Tasti Submit_______*/
+
+input{
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+input[type="password"], input[type="email"], input[type="text"]{
+  outline: none;
+  padding: 8px;
+  display: block;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  margin: 5px auto;
+  margin-top: 0px;
+}
+
+input[type="submit"]{
+    color: #fff;
+    background: #165b8e;
+    padding: 10px;
+    margin: 5px auto;
+    margin-top: 0px;
+    border: 0px;
+    width: 250px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+input[type="submit"]:hover{
+    background: #6b96b5;
+}
+
+header{
+    background: #254076;
+    color: #f9f9f9;
+}
+
+
+/*______________Inizio Menu_________________*/
+
+nav{
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    background: #254076;    
+    display: inline-block; 
+}
+
+#menuContent{
+    z-index: 5; /* serve per lasciare il menù sempre in primo piano */
+    left:0px;
+    height: 50px;
+    vertical-align: middle;
+    position: fixed;
+    line-height: 50%;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+#menuContent a{
+    color: #f9f9f9;
+    display: block;
+    /*width: 190px;*/
+    width: auto;
+    background: #254076;
+    padding: 10% 0%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+#menuContent a:hover {
+    background: #6e7f9f;
+}
+
+#menuContent ul{
+    display: inline;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+#menuContent li, #cat {
+    float: left;
+    display: inline;
+    font-size: 18px;
+/*    margin-right: 35px;*/
+    width: 200px;
+/*    width: auto;*/
+    margin: 2px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+#menuContent li ul {
+    position: absolute;
+    background: #254076;
+    width: auto;
+    height: auto;
+    left: -999em;
+}
+
+#menuContent li:hover ul {
+/*, #menuContent li.sfhover ul*/ 
+    left: auto;
+}
+
+#menuContent form#cerca {
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+    height: 200px;
+    width: 320px;
+    overflow: hidden;
+}
+
+#menuContent form#cerca input[type="text"]{
+    outline: none;
+    padding: 8px;
+    display: inline;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    margin: 2px auto;
+}
+
+#menuContent form#cerca input[type="submit"]{
+    background: #165b8e;
+    padding: 10px;
+    margin: 5px auto;
+    margin-top: 0px;
+    border: 0px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#menuContent form#cerca input[type="submit"]:hover{
+    background: #82a4be;
+}
+
+#menuContent form#cat input[type="submit"]{
+    font-family: sans-serif;
+    font-size: 18px;
+    text-align: center;
+    height: auto;
+    width: 190px;
+    overflow: hidden;
+    border: transparent;
+    background: transparent;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+#menuContent form#cat input[type="submit"]:hover{
+    background: #6e7f9f;
+}
+
+#menuContent a#saluto{
+    color: yellow;
+    font-size: 20px;
+}
+
+           
+
+
+/*______________Schermata login-registrazione_________________*/
+
+form#container_login{
+    color: darkslategrey;
+    width: 500px;
+    height: 100%;
+    align-content: center;
+    align-items: center;
+    margin: 20px;
+    float: right;
+}
+
+
+img#slideShow{
+    float: left;
+    margin: 20px;
+    margin-top: 80px;
+}
+/*______________Fine schermata login-registrazione_________________*/
+
+
